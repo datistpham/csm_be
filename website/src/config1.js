@@ -1,1 +1,1 @@
-export const API_URL= "https://fruity-berries-care.loca.lt"
+export const API_URL= "https://every-doors-type.loca.lt"
