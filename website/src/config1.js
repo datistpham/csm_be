@@ -1,1 +1,1 @@
-export const API_URL= "https://every-doors-type.loca.lt"
+export const API_URL= "https://vultur.serveo.net"
