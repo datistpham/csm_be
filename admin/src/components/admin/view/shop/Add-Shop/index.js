@@ -164,7 +164,6 @@ const Createshop = () => {
         <li className="breadcrumb-item">Vendor</li>
         <li className="breadcrumb-item active">Add Vendor</li>
       </ol>
-      {/* vendor details */}
       <Paper>
         <Grid
           container

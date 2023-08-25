@@ -152,7 +152,7 @@ const Checkout = (props) => {
         "error"
       );
     }
-    const res = await axios({
+    const res = await axios({  // api thanh toan
       url: "https://itchy-dirndl-frog.cyclic.app/payment-momo",
       method: "POST",
       data: {
@@ -494,7 +494,7 @@ const Checkout = (props) => {
                                       className="radio-item_1"
                                       onClick={() => {
                                         // setPaymentMethod("Online payment")
-                                        handlePaymentSystem();
+                                        handlePaymentSystem(); // pay online 
                                       }}
                                     >
                                       {/* <input value="card" name="paymentmethod" type="button" onClick={this.handleRadioChange} /> */}

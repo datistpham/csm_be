@@ -32,40 +32,6 @@ export default {
         }
     },
 
-    // async paymentSuccess(req, res, next) {
-    //     try {
-    //         const secret = '12345678'
-    //         const crypto = require('crypto')
-    //         const shasum = crypto.createHmac('sha256', secret)
-    //         shasum.update(JSON.stringify(req.body))
-    //         const digest = shasum.digest('hex')
-    //         if (digest === req.headers['x-razorpay-signature']) {
-    //             // process it
-    //             let value = req.body.payload.payment.entity;
-    //             return db.payment.create({
-    //                 paymentId: value.id,
-    //                 currency: value.currency,
-    //                 status: value.status,
-    //                 amount: (value.amount)/100,
-    //                 order_id: value.order_id,
-    //                 method: value.method,
-    //             })
-    //             .then(payment=>{
-    //                 res.status(200).json({ 'success': true });     
-    //             })
-
-    //         } else {
-    //             // pass it
-    //         }
-    //         res.json({ status: 'ok'})
-    //     }
-    //     catch (err) {
-    //         return res.status(500).json({
-    //             message: "Something error's"
-    //         })
-    //     }
-    // },
-
     async findOrderList(req, res, next) {
         const instance = new Razorpay({
             key_id: process.env.RAZORPAY_KEY_ID || 'rzp_live_VHO6uZelazZ0VR',

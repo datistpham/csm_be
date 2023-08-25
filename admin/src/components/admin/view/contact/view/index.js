@@ -172,7 +172,7 @@ const View = () => {
                             :
                             <ViewReply {...row} />
                           }
-                          <Link
+                          <Link // xoa
                             title={"Delete"}
                             className="edit-btn"
                             onClick={()=> {

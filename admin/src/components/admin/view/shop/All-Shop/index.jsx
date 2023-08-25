@@ -104,20 +104,20 @@ const Allshop = () => {
                     </div> */}
                 </div>
                 <div className="col-lg-12 col-md-6">
-                    <div className="bulk-section mt-30">
+                    {/* <div className="bulk-section mt-30">
                         <div className="search-by-name-input">
                             <input value={searchText} onChange={(e)=> handleSearch(e)} className="form-control" placeholder="Search" />
                         </div>
                         <div className="input-group">
-                            {/* <select id="categeory" name="categeory" className="form-control">
+                            <select id="categeory" name="categeory" className="form-control">
                                 <option selected>Active</option>
                                 <option value={1}>Inactive</option>
-                            </select> */}
+                            </select>
                             <div className="input-group-append">
                                 <button className="status-btn hover-btn" type="submit">Search Product</button>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="col-lg-12 col-md-12">
                     <div className="card card-static-2 mt-30 mb-30">
@@ -157,11 +157,6 @@ const Allshop = () => {
                                                         state: { row }
                                                     }}>
                                                         <Typography className="view-shop-btn"><i className="fas fa-eye" /></Typography>
-                                                    </Link>
-                                                    <Link to={{
-                                                        pathname: `/admin/shop/shop-product`,
-                                                    }}>
-                                                        <Typography className="list-btn"><i className="fas fa-list-alt" /></Typography>
                                                     </Link>
                                                     <Link to={{
                                                         pathname: `/admin/shop/edit`,

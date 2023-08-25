@@ -8,6 +8,7 @@ import cookieParser from 'cookie-parser';
 import expressSanitizer from 'express-sanitizer';
 import helmet from 'helmet';
 import rfs from 'rotating-file-stream';
+import cors from "cors"
 import './passport';
 
 export default {
@@ -18,7 +19,6 @@ export default {
             interval: '1d',
             path: path.join(__dirname, '..', 'log')
         })
-        
         app.use(logger(config.app.log, { stream: accessLogStream }));
         app.set('view engine', 'html');
         app.use(bodyParser.urlencoded({ extended: true }));

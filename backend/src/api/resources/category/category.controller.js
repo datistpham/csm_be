@@ -124,6 +124,7 @@ export default {
         try {
             db.category.findAll({
                 limit: 3
+                // axios 
             })
             .then(list=> res.status(200).json({'success': true, data: list}))
             .catch(e=> next(e))

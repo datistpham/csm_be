@@ -72,7 +72,7 @@ export default {
         })
         if(data) {
             const data1= await db.vouchercustomer.findOne({where: {voucherId: data.id, customerId: uid}})
-            if(data1.is_use== 1) {
+            if(data1?.is_use== 1) {
                 return res.status(200).json({ok: false, used: true})
             }
             return res.status(200).json({ok: true, data: {id: data.id}})
