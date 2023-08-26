@@ -4,6 +4,8 @@ import { GetUserLogin } from '../../../../services';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@material-ui/core';
 import axios from "axios"
 import { API_URL } from '../../../../../../config1';
+import swal from "sweetalert"
+import customer_register_api from '../../../../../../api/register';
 
 const emailRegex = RegExp(
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -80,24 +82,22 @@ const Register = () => {
         let data = { firstName: firstName, email: email, password: password }
         try {
             let list = await GetUserLogin.getUserRegister(data);
-            
+            return list
         } catch (error) {
             NotificationManager.error("Email is exist", "Input Error");
-            
         }
-        // if (formValid(formData)) {
-        //     if (list) {
-        //         NotificationManager.success("Successfully Added New User");
-        //         window.location.href = "/login";
-        //     }
-        // } else {
-        //     NotificationManager.error("Please check your Register", "Input Error");
-        // }
     };
     const handleOpenDialog = async  () => {
-        await handleSubmit()
-        setOpen(true);
-        verificationFunc({email, password, firstName})
+        try {
+            const res= await customer_register_api({email, password, firstName})
+            console.log(res)
+            setOpen(true);
+            verificationFunc({email, password, firstName})
+            
+        } catch (error) {
+            setOpen(false)
+            swal("Notice", "Account is exist, try again with another email", "error")
+        }
     };
 
     const handleCloseDialog = () => {

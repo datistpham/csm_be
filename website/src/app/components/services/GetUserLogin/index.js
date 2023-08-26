@@ -27,6 +27,7 @@ const getUserLogin = async (data) => {
 const getUserRegister = async (data) => {
     try {
         let result = await api.post(Apis.GetUserRegsiter, data);
+        console.log(result)
         if (result.data.error) {
             NotificationManager.error(result.data.error);
             return null;

@@ -49,7 +49,7 @@ export default {
         db.user.findOne({ where: { email: email }, paranoid: false })
             .then(find => {
                 if (find) {
-                    return res.status(409).json("Email is already in use");
+                    return res.status(409).json({message: "Email is already in use", ok: false});
                 }
                 return db.user.create({
                     firstName: firstName,
