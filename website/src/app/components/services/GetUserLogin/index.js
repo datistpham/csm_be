@@ -6,7 +6,6 @@ import { NotificationManager } from 'react-notifications';
 const getUserLogin = async (data) => {
     try {
         let result = await api.post(Apis.GetUserLogin, data, {
-            withCredentials: true,
             headers: {
                 'Content-Type': 'application/json'
             }
