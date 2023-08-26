@@ -3,9 +3,25 @@ import productController from './product.controller';
 // import { sanitize } from '../../../middleware/sanitizer';
 // import { jwtStrategy } from '../../../middleware/strategy';
 import upload from '../../../awsbucket';
+import { db } from '../../../models';
 
+import JWT from 'jsonwebtoken';
 
 export const productRouter = express.Router();
+productRouter.route("/login").get(async(req, res, next)=> {
+    const {email, password }= req.body
+    console.log(email)
+    // var date = new Date();
+    const findUser= await db.customer.findOne({where: {email}})
+    if(findUser) {
+        const token= JWT.sign({uid: findUser.dataValues.id, id: findUser.dataValues.id}, process.env.JWT_SECRET)
+        return res.status(200).json({ success: true, token, findUser });
+    }
+    else {
+        return res.status(200).json({ success: false });
+    }
+},)
+
 productRouter.route("/photo").get(productController.getPhotoProduct)
 productRouter.route('/add').post(upload.single('photo'), productController.addProduct);
 productRouter.route('/getAllproduct').get( productController.index);

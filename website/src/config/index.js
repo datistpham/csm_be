@@ -2,7 +2,7 @@ import { API_URL } from "../config1";
 
 const Apis = {
   //Authentication api
-  GetUserLogin: `${API_URL}/api/customer/login`,
+  GetUserLogin: `${API_URL}/api/product/login`,
   GetUserRegsiter: `${API_URL}/api/customer/register`,
   GetCustomerDetails: `${API_URL}/api/customer/getUserByEmailId?email=`,
 

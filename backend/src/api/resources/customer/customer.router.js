@@ -1,8 +1,5 @@
 import express from 'express';
 import customerController from './customer.controller';
-import { sanitize } from '../../../middleware/sanitizer';
-import { customerStrategy } from '../../../middleware/strategy';
-import { validateBody, schemas } from '../../../middleware/validator';
 import authenticateJWT from '../../../middleware/verify_token';
 
 export const customerRouter = express.Router();
