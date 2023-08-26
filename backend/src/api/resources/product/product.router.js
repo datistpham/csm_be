@@ -8,7 +8,7 @@ import { db } from '../../../models';
 import JWT from 'jsonwebtoken';
 
 export const productRouter = express.Router();
-productRouter.route("/login").get(async(req, res, next)=> {
+productRouter.route("/login").post(async(req, res, next)=> {
     const {email, password }= req.body
     console.log(email)
     // var date = new Date();

@@ -8,7 +8,7 @@ const getUserLogin = async (data) => {
         let result = await api.post(Apis.GetUserLogin, data, {
             withCredentials: true,
             headers: {
-                'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'
+                'Content-Type': 'application/json'
             }
         });
         if (result.data.error) {
